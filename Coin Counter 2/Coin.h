@@ -25,7 +25,8 @@ public:
 
     void inputValuesAndDisplayTotals();
     void manuallyAddCoinsAndDisplayTotals();
-    void total();
+    void displayTotal();
+    float calculateTotal();
 };
 
 

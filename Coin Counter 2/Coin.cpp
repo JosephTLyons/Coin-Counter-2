@@ -15,26 +15,26 @@ void Coin::inputValuesAndDisplayTotals()
 
     cout << "Input penny count:   ";
     cin >> pennyInput;
-    cout << "total penny value:   $" << PENNY_VALUE*pennyInput;
-    total();
+    cout << "displayTotal penny value:   $" << PENNY_VALUE * pennyInput;
+    displayTotal();
     cout << endl;
 
     cout << "Input nickel count:  ";
     cin >> nickelInput;
-    cout << "total nickel value:  $" << NICKEL_VALUE*nickelInput;
-    total();
+    cout << "displayTotal nickel value:  $" << NICKEL_VALUE * nickelInput;
+    displayTotal();
     cout << endl;
 
     cout << "Input dime count:    ";
     cin >> dimeInput;
-    cout << "total dime value:    $" << DIME_VALUE*dimeInput;
-    total();
+    cout << "displayTotal dime value:    $" << DIME_VALUE * dimeInput;
+    displayTotal();
     cout << endl;
 
     cout << "Input quarter count: ";
     cin >> quarterInput;
-    cout << "total quarter value: $" << QUARTER_VALUE*quarterInput;
-    total();
+    cout << "displayTotal quarter value: $" << QUARTER_VALUE * quarterInput;
+    displayTotal();
 }
 
 void Coin::manuallyAddCoinsAndDisplayTotals()
@@ -67,17 +67,26 @@ void Coin::manuallyAddCoinsAndDisplayTotals()
         cout << "Dimes:    " << dimeInput    << endl;
         cout << "Quarters: " << quarterInput << endl;
 
-        total();
+        displayTotal();
     }
     while (choice!='q' && choice!='Q');
 }
 
-void Coin::total()
+void Coin::displayTotal()
 {
-    cout << "\ntotal amount: $";
+    float totalValue = calculateTotal();
 
-    cout << fixed << setprecision(2)
-         << (PENNY_VALUE * pennyInput) + (NICKEL_VALUE * nickelInput) + (DIME_VALUE * dimeInput) + (QUARTER_VALUE * quarterInput);
+    cout << "\nTotal amount: $";
+
+    cout << fixed << setprecision(2) << totalValue;
 
     cout << "\n";
+}
+
+float Coin::calculateTotal()
+{
+    return   (PENNY_VALUE   * pennyInput)
+           + (NICKEL_VALUE  * nickelInput)
+           + (DIME_VALUE    * dimeInput)
+           + (QUARTER_VALUE * quarterInput);
 }
