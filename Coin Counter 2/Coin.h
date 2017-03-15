@@ -24,6 +24,11 @@ private:
 public:
 
     void inputValuesAndDisplayTotals();
+    void getPennyCount();
+    void getNickelCount();
+    void getDimeCount();
+    void getQuarterCount();
+
     void manuallyAddCoinsAndDisplayTotals();
     void displayTotal();
     float calculateTotal();

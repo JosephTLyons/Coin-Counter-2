@@ -5,7 +5,6 @@
 
 #include <iostream>
 #include <iomanip>
-
 #include "Coin.h"
 using namespace std;
 
@@ -13,24 +12,44 @@ void Coin::inputValuesAndDisplayTotals()
 {
     cout << fixed << setprecision(2) << endl;
 
+    getPennyCount();
+    cout << endl;
+
+    getNickelCount();
+    cout << endl;
+
+    getDimeCount();
+    cout << endl;
+
+    getQuarterCount();
+}
+
+void Coin::getPennyCount()
+{
     cout << "Input penny count:   ";
     cin >> pennyInput;
     cout << "displayTotal penny value:   $" << PENNY_VALUE * pennyInput;
     displayTotal();
-    cout << endl;
+}
 
+void Coin::getNickelCount()
+{
     cout << "Input nickel count:  ";
     cin >> nickelInput;
     cout << "displayTotal nickel value:  $" << NICKEL_VALUE * nickelInput;
     displayTotal();
-    cout << endl;
+}
 
+void Coin::getDimeCount()
+{
     cout << "Input dime count:    ";
     cin >> dimeInput;
     cout << "displayTotal dime value:    $" << DIME_VALUE * dimeInput;
     displayTotal();
-    cout << endl;
+}
 
+void Coin::getQuarterCount()
+{
     cout << "Input quarter count: ";
     cin >> quarterInput;
     cout << "displayTotal quarter value: $" << QUARTER_VALUE * quarterInput;
