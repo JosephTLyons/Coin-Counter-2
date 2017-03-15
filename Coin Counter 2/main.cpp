@@ -6,20 +6,20 @@ int main()
 {
     int choice;
     
-    Coin count;
+    Coin coin;
     
-    cout << "1 to enter total coin counts, 2 to manually count coins: ";
+    cout << "1 to enter total coin counts, 2 to manually coin coins: ";
     cin >> choice;
     
     if (choice==1)
     {
-        count.inputValuesAndDisplayTotals();
-        count.total();
+        coin.inputValuesAndDisplayTotals();
+        coin.total();
     }
     
     else
     {
-        count.manuallyAddCoinsAndDisplayTotals();
+        coin.manuallyAddCoinsAndDisplayTotals();
     }
 
     cout << endl;
