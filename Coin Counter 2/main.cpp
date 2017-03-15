@@ -7,14 +7,14 @@ class Coin
 private:
     
     const float PENNY_VALUE   = 0.01;
-    const float NICKELVALUE  = 0.05;
-    const float DIMEVALUE    = 0.10;
-    const float QUARTERVALUE = 0.25;
+    const float NICKEL_VALUE  = 0.05;
+    const float DIME_VALUE    = 0.10;
+    const float QUARTER_VALUE = 0.25;
     
     int pennyInput   = 0;
-    int NickelInput  = 0;
-    int DimeInput    = 0;
-    int QuarterInput = 0;
+    int nickelInput  = 0;
+    int dimeInput    = 0;
+    int quarterInput = 0;
     
 public:
     
@@ -27,20 +27,20 @@ int main()
 {
     int choice;
     
-    Coin Count;
+    Coin count;
     
     cout << "1 to enter total coin counts, 2 to manually count coins: ";
     cin >> choice;
     
     if (choice==1)
     {
-        Count.inputValuesAndDisplayTotals();
-        Count.total();
+        count.inputValuesAndDisplayTotals();
+        count.total();
     }
     
     else
     {
-        Count.manuallyAddCoinsAndDisplayTotals();
+        count.manuallyAddCoinsAndDisplayTotals();
     }
 
     cout << endl;
@@ -57,63 +57,63 @@ void Coin::inputValuesAndDisplayTotals()
     cout << endl;
     
     cout << "Input nickel count:  ";
-    cin >> NickelInput;
-    cout << "total nickel value:  $" << NICKELVALUE*NickelInput;
+    cin >> nickelInput;
+    cout << "total nickel value:  $" << NICKEL_VALUE*nickelInput;
     total();
     cout << endl;
     
     cout << "Input dime count:    ";
-    cin >> DimeInput;
-    cout << "total dime value:    $" << DIMEVALUE*DimeInput;
+    cin >> dimeInput;
+    cout << "total dime value:    $" << DIME_VALUE*dimeInput;
     total();
     cout << endl;
     
     cout << "Input quarter count: ";
-    cin >> QuarterInput;
-    cout << "total quarter value: $" << QUARTERVALUE*QuarterInput;
+    cin >> quarterInput;
+    cout << "total quarter value: $" << QUARTER_VALUE*quarterInput;
     total();
 }
 
 void Coin::manuallyAddCoinsAndDisplayTotals()
 {
-    char Choice2;
+    char choice;
     
     cout << "\n'1' for penny,\n'2' for nickel,\n'3' for dime,\n'4' for quarter,\n'q' to quit\n";
     
     do
     {
         cout << "\nInput: ";
-        cin >> Choice2;
+        cin >> choice;
         
-        if (Choice2=='1')
+        if (choice=='1')
             ++pennyInput;
         
-        if (Choice2=='2')
-            ++NickelInput;
+        if (choice=='2')
+            ++nickelInput;
         
-        if (Choice2=='3')
-            ++DimeInput;
+        if (choice=='3')
+            ++dimeInput;
         
-        if (Choice2=='4')
-            ++QuarterInput;
+        if (choice=='4')
+            ++quarterInput;
         
         cout << endl;
         
         cout << "Pennies:  " << pennyInput   << endl;
-        cout << "Nickels:  " << NickelInput  << endl;
-        cout << "Dimes:    " << DimeInput    << endl;
-        cout << "Quarters: " << QuarterInput << endl;
+        cout << "Nickels:  " << nickelInput  << endl;
+        cout << "Dimes:    " << dimeInput    << endl;
+        cout << "Quarters: " << quarterInput << endl;
 
         total();
     }
-    while (Choice2!='q' && Choice2!='Q');
+    while (choice!='q' && choice!='Q');
 }
 
 void Coin::total()
 {
     cout << "\ntotal amount: $";
     
-    cout << fixed << setprecision(2) << (PENNY_VALUE*pennyInput)+(NICKELVALUE*NickelInput)+(DIMEVALUE*DimeInput)+(QUARTERVALUE*QuarterInput);
+    cout << fixed << setprecision(2) << (PENNY_VALUE*pennyInput)+(NICKEL_VALUE*nickelInput)+(DIME_VALUE*dimeInput)+(QUARTER_VALUE*quarterInput);
     
     cout << "\n";
 }
