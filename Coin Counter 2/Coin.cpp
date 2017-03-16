@@ -55,16 +55,16 @@ void Coin::manuallyAddCoinsAndDisplayTotals()
         cout << "\nInput: ";
         cin >> choice;
 
-        if (choice=='1')
+        if (choice == '1')
             ++pennyCount;
 
-        if (choice=='2')
+        if (choice == '2')
             ++nickelCount;
 
-        if (choice=='3')
+        if (choice == '3')
             ++dimeCount;
 
-        if (choice=='4')
+        if (choice == '4')
             ++quarterCount;
 
         cout << endl;
@@ -76,7 +76,7 @@ void Coin::manuallyAddCoinsAndDisplayTotals()
 
         displayOverallTotal();
     }
-    while (choice!='q' && choice!='Q');
+    while ((choice != 'q') && (choice != 'Q'));
 }
 
 void Coin::displayOverallTotal()
@@ -84,8 +84,7 @@ void Coin::displayOverallTotal()
     float totalValue = calculateTotal();
 
     cout << "\nTotal amount: $";
-    cout << fixed << setprecision(2) << totalValue;
-    cout << "\n";
+    cout << fixed << setprecision(2) << totalValue << endl;
 }
 
 float Coin::calculateTotal()
