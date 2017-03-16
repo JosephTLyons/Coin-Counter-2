@@ -14,19 +14,23 @@ void Coin::inputValuesAndDisplayTotals()
 
     getCoinCount(pennyCount, "Penny");
     displayTotalCoinValue(PENNY_VALUE, pennyCount, "Penny");
-    displayTotal();
+    displayOverallTotal();
+    cout << endl;
 
     getCoinCount(nickelCount, "Nickel");
     displayTotalCoinValue(NICKEL_VALUE, nickelCount, "Nickel");
-    displayTotal();
+    displayOverallTotal();
+    cout << endl;
 
     getCoinCount(dimeCount, "Dime");
     displayTotalCoinValue(DIME_VALUE, dimeCount, "Dime");
-    displayTotal();
+    displayOverallTotal();
+    cout << endl;
 
     getCoinCount(quarterCount, "Quarter");
     displayTotalCoinValue(QUARTER_VALUE, quarterCount, "Quarter");
-    displayTotal();
+    displayOverallTotal();
+    cout << endl;
 }
 
 void Coin::getCoinCount(int &coinCount, const char *coinName)
@@ -70,19 +74,17 @@ void Coin::manuallyAddCoinsAndDisplayTotals()
         cout << "Dimes:    " << dimeCount    << endl;
         cout << "Quarters: " << quarterCount << endl;
 
-        displayTotal();
+        displayOverallTotal();
     }
     while (choice!='q' && choice!='Q');
 }
 
-void Coin::displayTotal()
+void Coin::displayOverallTotal()
 {
     float totalValue = calculateTotal();
 
     cout << "\nTotal amount: $";
-
     cout << fixed << setprecision(2) << totalValue;
-
     cout << "\n";
 }
 

@@ -28,7 +28,7 @@ public:
     void displayTotalCoinValue(const float &coinValue, int &coinCount, const char *coinName);
 
     void manuallyAddCoinsAndDisplayTotals();
-    void displayTotal();
+    void displayOverallTotal();
     float calculateTotal();
 };
 
