@@ -3,8 +3,8 @@
 // Copyright (c) 2017 Joseph Lyons. All rights reserved.
 //
 
-#ifndef COIN_COUNTER_2_COIN_H
-#define COIN_COUNTER_2_COIN_H
+#ifndef COIN_H
+#define COIN_H
 
 
 class Coin
@@ -16,10 +16,10 @@ private:
     const float DIME_VALUE    = 0.10;
     const float QUARTER_VALUE = 0.25;
 
-    int pennyInput   = 0;
-    int nickelInput  = 0;
-    int dimeInput    = 0;
-    int quarterInput = 0;
+    int pennyCount   = 0;
+    int nickelCount  = 0;
+    int dimeCount    = 0;
+    int quarterCount = 0;
 
 public:
 
