@@ -12,48 +12,32 @@ void Coin::inputValuesAndDisplayTotals()
 {
     cout << fixed << setprecision(2) << endl;
 
-    getPennyCount();
-    cout << endl;
+    getCoinCount(pennyCount, "Penny");
+    displayTotalCoinValue(PENNY_VALUE, pennyCount, "Penny");
+    displayTotal();
 
-    getNickelCount();
-    cout << endl;
+    getCoinCount(nickelCount, "Nickel");
+    displayTotalCoinValue(NICKEL_VALUE, nickelCount, "Nickel");
+    displayTotal();
 
-    getDimeCount();
-    cout << endl;
+    getCoinCount(dimeCount, "Dime");
+    displayTotalCoinValue(DIME_VALUE, dimeCount, "Dime");
+    displayTotal();
 
-    getQuarterCount();
-}
-
-void Coin::getPennyCount()
-{
-    cout << "Input penny count:   ";
-    cin >> pennyCount;
-    cout << "displayTotal penny value:   $" << PENNY_VALUE * pennyCount;
+    getCoinCount(quarterCount, "Quarter");
+    displayTotalCoinValue(QUARTER_VALUE, quarterCount, "Quarter");
     displayTotal();
 }
 
-void Coin::getNickelCount()
+void Coin::getCoinCount(int &coinCount, const char *coinName)
 {
-    cout << "Input nickel count:  ";
-    cin >> nickelCount;
-    cout << "displayTotal nickel value:  $" << NICKEL_VALUE * nickelCount;
-    displayTotal();
+    cout << "Input "<< coinName << " count:   ";
+    cin >> coinCount;
 }
 
-void Coin::getDimeCount()
+void Coin::displayTotalCoinValue(const float &coinValue, int &coinCount, const char *coinName)
 {
-    cout << "Input dime count:    ";
-    cin >> dimeCount;
-    cout << "displayTotal dime value:    $" << DIME_VALUE * dimeCount;
-    displayTotal();
-}
-
-void Coin::getQuarterCount()
-{
-    cout << "Input quarter count: ";
-    cin >> quarterCount;
-    cout << "displayTotal quarter value: $" << QUARTER_VALUE * quarterCount;
-    displayTotal();
+    cout << "Total " << coinName << " value: $" << coinValue * coinCount;
 }
 
 void Coin::manuallyAddCoinsAndDisplayTotals()

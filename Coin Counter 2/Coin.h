@@ -24,10 +24,8 @@ private:
 public:
 
     void inputValuesAndDisplayTotals();
-    void getPennyCount();
-    void getNickelCount();
-    void getDimeCount();
-    void getQuarterCount();
+    void getCoinCount(int &coinCount, const char *coinName);
+    void displayTotalCoinValue(const float &coinValue, int &coinCount, const char *coinName);
 
     void manuallyAddCoinsAndDisplayTotals();
     void displayTotal();
@@ -35,4 +33,4 @@ public:
 };
 
 
-#endif //COIN_COUNTER_2_COIN_H
+#endif //COIN_H
